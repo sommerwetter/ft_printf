@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 10:17:37 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/06 10:56:34 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:04:12 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 int	ft_put_id(int x)
 {
 	size_t	len;
+	long	xc;
 
 	len = 0;
+	xc = x;
 	ft_putnbr_fd(x, 1);
-	if (x < 0)
+	if (xc <= 0)
 	{
-		x *= (-1);
+		xc *= (-1);
 		len++;
 	}
-	while (x > 0)
+	while (xc > 0)
 	{
 		len++;
-		x /= 10;
+		xc /= 10;
 	}
 	return (len);
 }

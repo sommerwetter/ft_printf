@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:54:04 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/06 10:46:24 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:10:10 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ static	int	format(char f, va_list *arg)
 		return (ft_put_s(va_arg(*arg, char *)));
 	if (f == 'p')
 	{
-		write(1, "0x1", 3);
-		return (3 + ft_put_hexa_low(va_arg(*arg, unsigned int)));
+		write(1, "0x", 2);
+		return (2 + ft_put_hexa_low(va_arg(*arg, unsigned int)));
 	}
 	if (f == 'i' || f == 'd')
 		return (ft_put_id(va_arg(*arg, int)));
 	if (f == 'u')
-		return (ft_put_unsigned_nbr_fd(va_arg(*arg, unsigned int), 1));
+		return (ft_put_u(va_arg(*arg, unsigned int)));
 	if (f == 'x')
 		return (ft_put_hexa_low(va_arg(*arg, unsigned int)));
 	if (f == 'X')
@@ -54,10 +54,12 @@ int	ft_printf(const char *text, ...)
 			i++;
 		}
 		else
+		{
 			ft_putchar_fd(text[i], 1);
 			count++;
+		}
 		i++;
 	}
 	va_end(arg);
-	return (count - 1);
+	return (count);
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 17:06:04 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/06 10:25:16 by marmoral         ###   ########.fr       */
+/*   Created: 2022/05/26 17:05:53 by marmoral          #+#    #+#             */
+/*   Updated: 2022/06/07 12:07:35 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static	size_t	digits(unsigned long n_cpy)
 	size_t	i;
 
 	i = 0;
+	if (n_cpy == 0)
+		return (1);
 	while (n_cpy > 0)
 	{
 		i++;
@@ -32,6 +34,8 @@ static	void	transform(char *nbr, size_t i, unsigned long n_cpy)
 
 	r = 0;
 	hex = "0123456789ABCDEF";
+	if (n_cpy == 0)
+		nbr[i] = hex[r];
 	while (n_cpy > 0)
 	{
 		r = n_cpy % 16;
@@ -45,15 +49,17 @@ int	ft_put_hexa_up(int n)
 {
 	unsigned long	n_cpy;
 	char			*nbr;
+	long			nc;
 	size_t			i;
 	size_t			di;
 
 	i = 0;
 	di = 0;
+	nc = n;
 	if (n < 0)
 	{
-		n *= -1;
-		n_cpy = (4294967295 + 1) - n;
+		nc *= -1;
+		n_cpy = (4294967295 + 1) - nc;
 	}
 	else
 		n_cpy = n;
