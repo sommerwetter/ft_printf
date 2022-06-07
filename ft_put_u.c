@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:42:48 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/07 11:49:19 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:16:23 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static	void	ft_put_unsigned_nbr(unsigned long nb)
 		nb = nb / 10;
 	}
 }
-
 
 int	ft_put_u(int n)
 {
