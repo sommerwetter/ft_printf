@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:54:04 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/07 12:20:02 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/10 13:14:40 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,12 @@ int	ft_printf(const char *text, ...)
 	tmp = 0;
 	while (text[i])
 	{
-		if (text[i] == '%')
-		{
-			tmp = format(text[i++ + 1], &arg);
-			count += tmp;
-		}
+		if (text[i] == '%' && text[i + 1] == '%')
+			count += ft_put_c(text[i++]);
+		else if (text[i] == '%')
+			count += format(text[i++ + 1], &arg);
 		else
-		{
-			ft_putchar_fd(text[i], 1);
-			count++;
-		}
+			count += ft_put_c(text[i]);
 		i++;
 	}
 	va_end(arg);
