@@ -6,13 +6,13 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 17:05:53 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/07 12:06:28 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:32:30 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	size_t	digits(unsigned long n_cpy)
+static	size_t	digits(unsigned long long n_cpy)
 {
 	size_t	i;
 
@@ -27,7 +27,7 @@ static	size_t	digits(unsigned long n_cpy)
 	return (i);
 }
 
-static	void	transform(char *nbr, size_t i, unsigned long n_cpy)
+static	void	transform(char *nbr, size_t i, unsigned long long n_cpy)
 {
 	int		r;
 	char	*hex;
@@ -45,11 +45,11 @@ static	void	transform(char *nbr, size_t i, unsigned long n_cpy)
 	}
 }
 
-int	ft_put_hexa_low(int n)
+int	ft_put_hexa_low(unsigned long long n)
 {
-	unsigned long	n_cpy;
-	char			*nbr;
-	long			nc;
+	unsigned long long	n_cpy;
+	char				*nbr;
+	unsigned long long	nc;
 	size_t			i;
 	size_t			di;
 

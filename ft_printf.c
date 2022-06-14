@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:54:04 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/10 13:14:40 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:31:53 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static	int	format(char f, va_list *arg)
 	if (f == 'p')
 	{
 		write(1, "0x", 2);
-		return (2 + ft_put_hexa_low(va_arg(*arg, unsigned int)));
+		return (2 + ft_put_hexa_low(va_arg(*arg, unsigned long long)));
 	}
 	if (f == 'i' || f == 'd')
 		return (ft_put_id(va_arg(*arg, int)));
