@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 17:05:53 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/14 16:32:30 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/14 16:45:12 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int	ft_put_hexa_low(unsigned long long n)
 	unsigned long long	n_cpy;
 	char				*nbr;
 	unsigned long long	nc;
-	size_t			i;
-	size_t			di;
+	size_t				i;
+	size_t				di;
 
 	i = 0;
 	di = 0;
