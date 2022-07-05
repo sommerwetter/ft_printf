@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 11:13:05 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/04 14:00:31 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/07/02 03:43:59 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ static	int	check_sign(const char *str)
 
 static	int	find_start(const char *str)
 {
-	size_t	x;
 	size_t	n;
 
-	x = 0;
 	n = 0;
 	while (str[n] == '-' || str[n] == '+' || str[n] == ' ' || str[n] == '\n'
 		|| str[n] == '\f' || str[n] == '\r' || str[n] == '\t' || str[n] == '\v')

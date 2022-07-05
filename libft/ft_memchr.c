@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 19:33:08 by marmoral          #+#    #+#             */
-/*   Updated: 2022/05/24 10:41:18 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/07/02 03:59:07 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (((unsigned char *)str)[i] == (unsigned char)c)
-			return ((void *)&str[i]);
+		if ((*(unsigned char *)str) == (unsigned char)c)
+			return ((void *)str);
+		str++;
 		i++;
 	}
 	return (NULL);

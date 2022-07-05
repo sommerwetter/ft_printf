@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 10:08:47 by marmoral          #+#    #+#             */
-/*   Updated: 2022/05/04 11:07:01 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/07/01 08:41:52 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int	ft_isprint(int c)
 {
 	if ((32 <= c) && (c <= 126))
-	{
 		return (1);
-	}
 	return (0);
 }

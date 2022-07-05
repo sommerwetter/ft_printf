@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:58:47 by marmoral          #+#    #+#             */
-/*   Updated: 2022/05/04 13:51:10 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/28 21:49:06 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	if (s[0] == 0 || ft_strlen(s) <= start)
 		return (ft_strdup(""));
-	sub = malloc(len + 1);
+	sub = NULL;
+	if (len > ft_strlen(s))
+		sub = malloc(ft_strlen(s) + 1);
+	else
+		sub = malloc(len + 1);
 	if (!sub)
 		return (NULL);
 	while (i < len && s[start])

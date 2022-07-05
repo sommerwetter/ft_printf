@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 11:54:34 by marmoral          #+#    #+#             */
-/*   Updated: 2022/05/17 13:15:19 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/06/28 21:38:39 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	else
 		ans = dst_l + src_l;
-	while (src[i] && dst_l < (size - 1))
+	while (src[i] && dst_l < size - 1 && size > 0)
 	{
 		dst[dst_l] = src[i];
 		dst_l++;

@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 10:32:37 by marmoral          #+#    #+#             */
-/*   Updated: 2022/05/20 14:39:39 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/07/02 03:48:22 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 char	*ft_itoa(int n);
 

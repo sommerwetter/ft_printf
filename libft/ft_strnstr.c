@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 10:18:19 by marmoral          #+#    #+#             */
-/*   Updated: 2022/05/22 19:18:06 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/07/01 08:43:24 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	i = 0;
 	if (needle[0] == 0)
-	{
 		return ((char *)haystack);
-	}
 	while (haystack[i] && i < len)
 	{
 		if (haystack[i] == needle[0])
