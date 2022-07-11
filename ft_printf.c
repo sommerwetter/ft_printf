@@ -6,11 +6,49 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 13:54:04 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/14 16:31:53 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/07/11 01:30:33 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static	int	ft_put_id(int x)
+{
+	size_t	len;
+	long	xc;
+
+	len = 0;
+	xc = x;
+	ft_putnbr_fd(x, 1);
+	if (xc <= 0)
+	{
+		xc *= (-1);
+		len++;
+	}
+	while (xc > 0)
+	{
+		len++;
+		xc /= 10;
+	}
+	return (len);
+}
+
+static	int	ft_put_s(char *s)
+{
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	write(1, s, ft_strlen(s));
+	return (ft_strlen(s));
+}
+
+static	int	ft_put_c(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
 
 static	int	format(char f, va_list *arg)
 {
@@ -39,12 +77,10 @@ int	ft_printf(const char *text, ...)
 	va_list	arg;
 	size_t	i;
 	size_t	count;
-	int		tmp;
 
 	va_start(arg, text);
 	i = 0;
 	count = 0;
-	tmp = 0;
 	while (text[i])
 	{
 		if (text[i] == '%' && text[i + 1] == '%')

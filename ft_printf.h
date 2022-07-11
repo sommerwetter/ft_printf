@@ -6,7 +6,7 @@
 /*   By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:43:54 by marmoral          #+#    #+#             */
-/*   Updated: 2022/06/14 16:31:44 by marmoral         ###   ########.fr       */
+/*   Updated: 2022/07/11 01:29:28 by marmoral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 # include "libft/libft.h"
 
 int	ft_printf(const char *text, ...);
-int	ft_put_c(char c);
-int	ft_put_s(char *s);
-int	ft_put_id(int x);
 int	ft_put_hexa_low(unsigned long long n);
 int	ft_put_u(int n);
 int	ft_put_hexa_up(int n);

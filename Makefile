@@ -6,7 +6,7 @@
 #    By: marmoral <marmoral@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/27 11:15:29 by marmoral          #+#    #+#              #
-#    Updated: 2022/06/10 13:36:53 by marmoral         ###   ########.fr        #
+#    Updated: 2022/07/11 01:37:14 by marmoral         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,11 @@ CC = gcc
 
 LPATH = ./libft
 
-FILES =	ft_printf.c ft_put_hexa_low.c ft_put_hexa_up.c ft_put_u.c ft_put_c.c ft_put_id.c ft_put_s.c\
+FILES =	ft_printf.c ft_put_hexa_low.c ft_put_hexa_up.c ft_put_u.c\
 
 OBJ = ${FILES:.c=.o}
+
+RM = rm -f
 
 all:$(NAME)
 
@@ -29,14 +31,14 @@ $(NAME): ${OBJ}
 	ar rcs $(NAME) $(OBJ) $(LPATH)/ft_*.o
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $(FILES)
+	$(CC) $(FLAGS) -c -o $@ $^ 
 
 clean:
-	rm -f $(OBJ)
+	$(RM) $(OBJ)
 	make clean -C $(LPATH)
 
 fclean: clean
-	rm -f $(NAME)
+	$(RM) $(NAME)
 	make fclean -C $(LPATH)
 
 re: fclean all
