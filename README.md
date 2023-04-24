@@ -1,5 +1,5 @@
 # ft_printf
 
-**Coding own printf function. 42 Project.**
+**Coding my own printf function. (limited functions)**
 100% passed
 !NO BONUSES
